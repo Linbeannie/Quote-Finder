@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Quote Finder</title>
+</head>
+<body>
+
+  <h1>Quote Finder</h1>
+
+  <form action="/search" method="GET">
+
+    Keyword:
+    <input type="text" name="keyword">
+
+    <select name="authorId">
+      <option value="">Select Author</option>
+        <% authors.forEach( function(i) { %>
+
+          
+          <option href="#" value="<%=i.authorId%>"><%=i.firstName%> <%=i.lastName%></option>
+
+          <% }) %>
+
+    
+    </select>
+
+    <select name="category">
+      <option value="">Select Category</option>
+        <% categories.forEach( function(i) { %>
+
+          
+          <option value="<%=i.category%>"><%=i.category%></option>
+
+          <% }) %>
+
+  
+    </select>
+
+    <button>Search</button>
+
+  </form>
+
+  
+
+</body>
+</html>
